@@ -1,0 +1,73 @@
+body :not(.form-container) {
+}
+
+.section-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 5px 3px rgb(0, 0, 0, 0.5);
+  padding: 3rem;
+}
+
+.headreg {
+  font-size: 1.2rem;
+  padding: 0.6rem 3rem;
+  border-radius: 15px;
+}
+.headingbtns {
+  display: flex;
+  gap: 2rem;
+  font-size: 0.2rem;
+  border-radius: 15px;
+  justify-content: space-between;
+}
+.headingbtns button {
+  background-color: #e2dad6;
+}
+.headingbtns button:active {
+  background-color: #6eacda;
+  color: white;
+}
+
+.form-container input {
+  width: 17rem;
+  height: 2rem;
+  font-size: 1.1rem;
+  padding: 0.4rem;
+  padding-left: 0.8rem;
+}
+
+button {
+  border: none;
+  width: auto;
+  height: auto;
+  font-size: 1.2rem;
+  padding: 1rem 3rem;
+  border-radius: 15px;
+}
+
+#regbtnreg,
+#regbtnlog {
+  margin-top: 1.3rem;
+  background-color: #e2dad6;
+  color: black;
+  cursor: pointer;
+}
+
+.successMsg {
+  display: flex;
+  font-size: 2rem;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 25%;
+}
