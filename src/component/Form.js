@@ -16,10 +16,9 @@ export default function Form() {
     email: "",
   });
 
-  function pageSelection(event) {
-    setPage(true);
-    event.preventDefault();
-  }
+  const togglePage = () => {
+    setPage((prevIsPage) => !prevIsPage); // Toggle between true and false
+  };
 
   const validate = () => {
     const newErrors = {};
@@ -41,6 +40,7 @@ export default function Form() {
       return {
         ...prevValue,
         [name]: value,
+        password: password,
       };
     });
   }
@@ -58,13 +58,6 @@ export default function Form() {
     <div className="">
       <div className="section-container">
         <form className="form-container" onSubmit={handleSubmit}>
-          <div className="headingbtns">
-            <button className="headreg">Sign Up</button>
-
-            <button className="headreg" onClick={pageSelection}>
-              Sign In
-            </button>
-          </div>
           <h1>
             {" "}
             {isPage ? "Welcome Back!" : "Hello Newbie.!  "}
@@ -83,6 +76,18 @@ export default function Form() {
 
             //<Link to={"/success"}></Link>
           )}
+          <div className="decision">
+            {isPage ? (
+              <p>
+                Create Account? <span onClick={togglePage}>Sign Up</span>
+              </p>
+            ) : (
+              <p>
+                Already have an Account?{" "}
+                <span onClick={togglePage}>Log In</span>
+              </p>
+            )}
+          </div>
         </form>
       </div>
     </div>

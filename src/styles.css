@@ -1,4 +1,9 @@
-body :not(.form-container) {
+/*GENERAL*/
+* {
+  margin: 0px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .section-container {
@@ -16,6 +21,7 @@ body :not(.form-container) {
   justify-content: center;
   box-shadow: 0px 0px 5px 3px rgb(0, 0, 0, 0.5);
   padding: 3rem;
+  margin-top: 2rem;
 }
 
 .headreg {
@@ -70,4 +76,14 @@ button {
   position: absolute;
   top: 50%;
   left: 25%;
+}
+
+.decision p {
+  font-size: 0.9rem;
+}
+
+.decision span {
+  font-size: 1rem;
+  color: #6eacda;
+  cursor: pointer;
 }

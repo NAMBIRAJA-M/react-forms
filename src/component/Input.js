@@ -5,7 +5,8 @@ export default function Input(props) {
   const [error, setError] = React.useState(false);
   const customStyle = {
     color: "red",
-    fontSize: "1rem",
+    textAlign: "center",
+    fontSize: "0.7rem",
     marginTop: "-10px",
     marginLeft: "-120px",
     marginBottom: "0px",
@@ -13,7 +14,7 @@ export default function Input(props) {
 
   function handleChange(event) {
     const { name, value } = event.target;
-    props.onAdd(name, value, event);
+    props.onAdd(name, value, password);
   }
 
   function handlePassword(event) {
@@ -84,6 +85,7 @@ export default function Input(props) {
             placeholder="Password"
             name="password"
           />
+
           <input
             id="cp"
             onChange={checking}
