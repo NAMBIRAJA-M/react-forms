@@ -1,32 +1,19 @@
 import React from "react";
 
 export default function Input(props) {
-  const [detail, setDetail] = React.useState({
-    fName: "",
-    lName: "",
-    email: " ",
-  });
-
   const [password, setPassword] = React.useState("");
   const [error, setError] = React.useState(false);
   const customStyle = {
     color: "red",
-    fontSize: "19px",
+    fontSize: "1rem",
     marginTop: "-10px",
-    marginLeft: "-100px",
+    marginLeft: "-120px",
     marginBottom: "0px",
   };
 
   function handleChange(event) {
     const { name, value } = event.target;
-
-    setDetail((prevValue) => {
-      return {
-        ...prevValue,
-        [name]: value,
-      };
-    });
-    console.log(detail);
+    props.onAdd(name, value, event);
   }
 
   function handlePassword(event) {
@@ -41,7 +28,7 @@ export default function Input(props) {
       document.getElementById("regbtnreg").style.backgroundColor = "#6eacda";
       document.getElementById("regbtnreg").style.color = "white";
     } else {
-      setError("*passwords do not match");
+      setError("passwords do not match");
       document.getElementById("regbtnreg").style.backgroundColor = "#e2dad6";
       document.getElementById("regbtnreg").style.color = "black";
     }
@@ -66,18 +53,31 @@ export default function Input(props) {
             placeholder="First Name"
             name="fName"
           />
+          {props.isValid.fName && (
+            <p style={customStyle}>{props.isValid.fName}</p>
+          )}
+
           <input
             onChange={handleChange}
             type="text"
             placeholder="Last Name"
             name="lName"
           />
+          {props.isValid.lName && (
+            <p style={customStyle}>{props.isValid.lName}</p>
+          )}
+
           <input
             onChange={handleChange}
             type="email"
             placeholder="Email"
             name="email"
           />
+
+          {props.isValid.email && (
+            <p style={customStyle}>{props.isValid.email}</p>
+          )}
+
           <input
             onChange={handlePassword}
             type="password"

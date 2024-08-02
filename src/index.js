@@ -10,10 +10,10 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
   },
-  {
+  /**  {
     path: "/success",
     element: <SuccessMsg />,
-  },
+  },*/
 ]);
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
