@@ -8,13 +8,12 @@ export default function Input(props) {
     textAlign: "center",
     fontSize: "0.7rem",
     marginTop: "-10px",
-    marginLeft: "-120px",
     marginBottom: "0px",
   };
 
   function handleChange(event) {
     const { name, value } = event.target;
-    props.onAdd(name, value, password);
+    props.onAdd(name, value);
   }
 
   function handlePassword(event) {

@@ -40,7 +40,6 @@ export default function Form() {
       return {
         ...prevValue,
         [name]: value,
-        password: password,
       };
     });
   }
